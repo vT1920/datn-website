@@ -1,0 +1,93 @@
+@import "./variable";
+
+@mixin theme($color, $background) {
+	color: $color;
+	background: $background;
+}
+
+.overview {
+	&__summary {
+		display: flex;
+		justify-content: space-between;
+		font-size: 12px;
+		width: 100%;
+		border-top-left-radius: inherit;
+		border-top-right-radius: inherit;
+		padding: 32px;
+	}
+
+	&__icon {
+		width: 116px;
+		height: 116px;
+	}
+
+	&--green {
+		@include theme($dark-green, $light-green);
+	}
+	&--yellow {
+		@include theme($dark-yellow, $light-yellow);
+	}
+	&--orange {
+		@include theme($dark-orange, $light-orange);
+	}
+	&--red {
+		@include theme($dark-red, $light-red);
+	}
+}
+
+.overview-value-wrapper {
+	display: flex;
+	flex-direction: row;
+
+	.overview-value {
+		display: flex;
+		width: 116px;
+		height: 116px;
+		color: #fff;
+		border-radius: 4px;
+		justify-content: space-between;
+		align-items: flex-start;
+		flex-direction: column;
+		padding: 12px;
+		margin-right: 24px;
+
+		&__unit {
+			line-height: 1.5;
+			text-transform: uppercase;
+		}
+		&__value {
+			font-size: 34px;
+			line-height: 40px;
+		}
+	}
+}
+
+.overview-status {
+	font-size: 12px;
+	line-height: 1.5;
+	font-weight: 500;
+	margin-top: 12px;
+	text-transform: uppercase;
+	&__label {
+		display: initial;
+	}
+	&__text {
+		font-size: 34px;
+		line-height: 1.18;
+	}
+}
+
+.overview-box {
+	&--green {
+		background: $green;
+	}
+	&--yellow {
+		background: $yellow;
+	}
+	&--orange {
+		background: $orange;
+	}
+	&--red {
+		background: $red;
+	}
+}
